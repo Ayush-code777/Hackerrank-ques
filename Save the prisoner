@@ -1,0 +1,15 @@
+int saveThePrisoner(int n, int m, int s) {
+    
+    int i=s;
+    while(m!=1){
+        i=(i+1)%n;
+        m--;
+        
+    }
+    if(i==0){
+        return n;
+    }
+    
+    return i;
+
+}
