@@ -1,0 +1,28 @@
+int* permutationEquation(int p_count, int* p, int* result_count) {
+    
+    int x=1, z,q;
+    int i=0;
+    *result_count=p_count;
+    int *r=(int*)malloc(*result_count*sizeof(int));
+    while(x!=p_count+1){
+        for(int y=0;y<p_count;y++){
+            if(p[y]==x){
+                z=y+1;
+                break;
+            }
+            continue;
+        }
+        for(int k=0;k<p_count;k++){
+            if(p[k]==z){
+                q=k+1;
+                r[i]=q;
+                i++;
+                break;
+            }
+            continue;
+        }
+        x++;
+    }
+    return r;
+
+}
