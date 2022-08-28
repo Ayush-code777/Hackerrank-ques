@@ -1,0 +1,16 @@
+int squares(int a, int b) {
+    int count=0;
+    int x;
+    for(int i=sqrt(a);i<=sqrt(b);i++){
+        //x=sqrt(i);
+       // int y=(int)x;
+        x=i*i;
+        if(x>=a && x<=b){
+            count++;
+        }
+        continue;
+        
+    }
+    return count;
+
+}
