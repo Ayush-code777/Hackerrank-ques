@@ -1,0 +1,36 @@
+int* climbingLeaderboard(int ranked_count, int* ranked, int player_count, int* player, int* result_count) {
+    
+    *result_count=player_count;
+    int *x=(int*)malloc(*result_count*sizeof(int));
+    int *y=(int*)malloc(ranked_count*sizeof(int));
+    y[0]=1;
+    for(int i=1;i<ranked_count;i++){
+        if(ranked[i]==ranked[i-1]){
+            y[i]=y[i-1];
+        }
+        else if(ranked[i]<ranked[i-1]){
+            y[i]=1+y[i-1];
+        }
+        else{
+            continue;
+        }
+    }
+    //return y;
+    
+    for(int k=0;k<player_count;k++){
+        for(int j=0;j<ranked_count;j++){
+            if(player[k]<ranked[j]){
+                x[k]=y[j]+1;
+                continue;
+            }
+            else if(player[k]>ranked[j] || player[k]==ranked[j]){
+                x[k]=y[j];
+                break;
+            }
+            //continue;
+            
+        }
+    }
+    return x;
+
+}
