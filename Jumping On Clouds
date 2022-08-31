@@ -1,0 +1,30 @@
+int jumpingOnClouds(int c_count, int* c) {
+    
+    int i=0;
+    int track =0;
+    while(i<=c_count-1 && i+1<c_count-1){
+        if(c[i+1]==1){
+            i+=2;
+            track++;
+        }
+        else if(c[i+1]==0 && c[i+2]==1){
+            i+=1;
+            track++;
+        }
+        else if(c[i+1]==0 && c[i+2]==0){
+            i+=2;
+            track++;
+        }
+    }
+    if(i==c_count-1){
+        return track;
+    }
+    else{
+        track++;
+    }
+    
+    
+    return track;
+    
+
+}
