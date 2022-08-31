@@ -1,0 +1,32 @@
+long repeatedString(char* s, long n) {
+    int i=0;
+    int count=0, length=0;
+    long x=n;
+    while(s[i]!='\0' && x!=0){
+        length++;
+        if(s[i]=='a'){
+            count++;
+            //count1++;
+        }
+        i++;
+        x--;
+        
+    }
+    //return count;
+    long long total=n/length;
+    long long res = total*count;
+    
+    
+    
+    
+   for(int j=0;j<(n-length)%length;j++){
+       if(s[j]=='a'){
+           res++;
+       }
+    }
+    return res;
+    
+    
+
+
+}
